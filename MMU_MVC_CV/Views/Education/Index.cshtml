@@ -1,0 +1,47 @@
+﻿@using MMU_MVC_CV.Models.Entity
+@model List<TblEducation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>EĞİTİM ÖĞRETİM</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Alt Başlık2</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.SubTitle1</td>
+            <td>@item.SubTitle2</td>
+            <td>@item.Date</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Education/DeleteEducation/@item.ID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Education/UpdateEducation/@item.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+<a href="/Education/AddEducation/" class="btn btn-primary">Yeni Eğitim Ekle</a>

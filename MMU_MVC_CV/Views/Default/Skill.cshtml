@@ -1,0 +1,17 @@
+﻿@using MMU_MVC_CV.Models.Entity
+@model List<TblSkills>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">TAMAMLANAN VE DEVAM EDEN EĞİTİMLER</h2>
+
+    <ul class="fa-ul mb-0">
+        @foreach (var x in Model)
+        {
+            <div class="subheading mb-3">@x.Skill (%@x.Ratio Tamamlandı.) </div>
+            <p class="mb-0">@x.Description</p>
+            <br />
+        }
+    </ul>
+</div>
+
+

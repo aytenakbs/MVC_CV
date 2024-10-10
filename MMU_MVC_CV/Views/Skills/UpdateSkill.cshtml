@@ -1,0 +1,21 @@
+﻿@model MMU_MVC_CV.Models.Entity.TblSkills
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4> Yeni Eğitim Düzenleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Eğitim Başlığı")
+    @Html.TextBoxFor(x => x.Skill, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tamamlanma Oranı")
+    @Html.TextBoxFor(x => x.Ratio, new { @class = "form-control" })
+    <br />
+    @Html.Label("Eğitim Açıklaması")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

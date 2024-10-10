@@ -1,0 +1,20 @@
+﻿@model MMU_MVC_CV.Models.Entity.TblSocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>SM Hesap Düzenleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Sosyal Medya Platformu")
+    @Html.TextBoxFor(x => x.Account, new { @class = "form-control" })
+    <br />
+    @Html.Label("Link")
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+    @Html.Label("İkon")
+    @Html.TextAreaFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

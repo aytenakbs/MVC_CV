@@ -1,0 +1,14 @@
+﻿@using MMU_MVC_CV.Models.Entity
+@model List<TblInterests>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">PROJELER & GÖNÜLLÜ ÇALIŞMALAR</h2>
+    @foreach (var x in Model)
+    {
+        <div class="subheading mb-3">@x.Description1</div>
+        <p class="mb-0">@x.Description2</p>
+        <br />
+    }
+</div>
+
+

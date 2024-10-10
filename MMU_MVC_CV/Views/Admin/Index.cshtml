@@ -1,0 +1,30 @@
+﻿@using MMU_MVC_CV.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>KULLANICI BİLGİLERİ</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Düzenle</th>
+        <th>Kaldır</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.UserName</td>
+            <td> <a href="~/Admin/UpdateAdmin/@item.ID"class="btn btn-danger">Düzenle</a></td>
+            <td><a href="/Admin/DeleteAdmin/@item.ID" class="btn btn-warning">Kaldır</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Admin/AddAdmin/" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+

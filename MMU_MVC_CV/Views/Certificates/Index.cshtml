@@ -1,0 +1,51 @@
+﻿@using MMU_MVC_CV.Models.Entity
+@model List<TblCertificates>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>SERTİFİKALAR VE SEMİNERLER</h2>
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        
+                        <div class="card-body">
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    @foreach (var item in Model)
+                                    {
+
+                                        <div>
+                                            <i class="fas fa-star bg-yellow"></i>
+                                            <div class="timeline-item">
+                                                <div class="timeline-body">
+                                                    @item.Description
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a href="/Certificates/UpdateCertificate/@item.ID" class="btn btn-success">Düzenle</a>
+                                                    <a href="/Certificates/DeleteCertificate/@item.ID" class="btn btn-danger ">Sil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                                <a href="/Certificates/AddCertificate/" class="btn btn-primary">Yeni Sertifika/Seminer Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
